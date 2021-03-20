@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--DI by using set-->
+
+    <bean id="address" class="com.example.pojo.Address">
+        <property name="address" value="Chongqing"/>
+    </bean>
+    <bean id="student" class="com.example.pojo.Student">
+        <property name="name" value="Zhengli"/>
+        <property name="address" ref="address"/>
+        <property name="books">
+            <array>
+                <value>EffectiIVE JAVA</value>
+                <value>MYSQL</value>
+                <value>C++</value>
+                <value>Math</value>
+            </array>
+        </property>
+        <property name="hobbys">
+            <list>
+                <value>game</value>
+                <value>soccer</value>
+                <value>movie</value>
+            </list>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="IDcard" value="1321313131"/>
+                <entry key="Studentcard" value="25141231321"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>DNF</value>
+                <value>CF</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null/>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="Where">Jiangbei</prop>
+                <prop key="Sex">Man</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--    <bean id="..." class="...">-->
+<!--        &lt;!&ndash; collaborators and configuration for this bean go here &ndash;&gt;-->
+<!--    </bean>-->
+
+    <!-- more bean definitions go here -->
+
+</beans>
